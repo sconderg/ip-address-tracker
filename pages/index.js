@@ -26,7 +26,7 @@ export default function Home() {
       inputRef.current.value = '';
     } 
   }
-  const MapWithNoSSR = dynamic(() => import("../components/map"), {
+  const MapWithNoSSR = dynamic(() => import("../components/Map"), {
     ssr: false
   });
   return (
