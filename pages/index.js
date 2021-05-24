@@ -15,7 +15,7 @@ export default function Home() {
   const handleSubmit = e => {
     e.preventDefault();
     if(inputRef.current.value) {
-      axios.get(`https://geo.ipify.org/api/v1?apiKey=at_4SycYngAiFWdeRsCrDdMNqsYbv2S4&ipAddress=${inputRef.current.value}`).then(response => {
+      axios.get(`https://geo.ipify.org/api/v1?apiKey=${process.env.API_KEY}&ipAddress=${inputRef.current.value}`).then(response => {
        setIp(response?.data?.ip);
        setLocation(`${response?.data?.location?.city}, ${response?.data?.location?.country}`);
        setTimezone(response?.data?.location?.timezone);
